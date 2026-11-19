@@ -1,0 +1,33 @@
+{
+  "name": "nmbrs-cli",
+  "version": "0.1.0",
+  "description": "Command-line tool for the Nmbrs Reporting public API, built for AI agents",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ig-shadow-walker/nmbrsCLI.git"
+  },
+  "type": "module",
+  "private": true,
+  "bin": {
+    "nmbrs": "src/cli.ts"
+  },
+  "scripts": {
+    "dev": "bun run src/cli.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "sync-docs": "bun run scripts/sync-docs.ts",
+    "reference": "bun run scripts/gen-reference.ts",
+    "build": "bun build src/cli.ts --compile --minify --no-compile-autoload-dotenv --outfile dist/nmbrs",
+    "install:local": "bun run build && bun run reference && sh scripts/install-local.sh",
+    "build:release": "bun run scripts/build-release.ts"
+  },
+  "dependencies": {
+    "commander": "^14.0.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.0",
+    "typescript": "^5.9.0"
+  }
+}

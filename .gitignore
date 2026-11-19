@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+.env.*
+*.log
+.DS_Store
+# never commit nmbrs credentials or sessions
+credentials
+session.json

@@ -1,0 +1,1818 @@
+{
+  "source": "https://api.stoplight.io/projects/cHJqOjIzMTU2NA/branches/main/export/reference/2.%20Public%20REST%20end-points/public-api.swagger.json",
+  "syncedAt": "2026-11-19T11:27:22.709Z",
+  "endpoints": [
+    {
+      "id": "list-of-administrations",
+      "group": "Administrations",
+      "method": "GET",
+      "path": "/v1/advisers/{globalAdviserId}/administrations",
+      "summary": "List of Administrations",
+      "description": "",
+      "deprecated": false,
+      "params": [
+        {
+          "name": "page[number]",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "page[size]",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "globalAdministrationId",
+          "in": "query",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "administrationName",
+          "in": "query",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "clientIdentifier",
+          "in": "query",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "cocNumber",
+          "in": "query",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "globalAdviserId",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        }
+      ],
+      "response": [
+        {
+          "name": "administrationId",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "clientIdentifier",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "addedDate",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "date-time"
+        },
+        {
+          "name": "address",
+          "type": "object",
+          "required": false,
+          "description": "",
+          "fields": [
+            {
+              "name": "street",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "houseNumber",
+              "type": "integer",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "houseNumberAddition",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "zipCode",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "city",
+              "type": "string",
+              "required": false,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "name": "legalForm",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "cocNumber",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "legalName",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "legalIdentificationNumber",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "sbi",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "isPrivate",
+          "type": "boolean",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "dateTerminated",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "format": "date-time"
+        },
+        {
+          "name": "useDimensions",
+          "type": "boolean",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "locale",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "roundImportedFinancialFigures",
+          "type": "boolean",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "periodType",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "startFiscalYear",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "website",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "phoneNumber",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "generalDescription",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "companyActivitiesDescription",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "internalControlDescription",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "administrativeIssuesDescription",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "legalEntityClassificationId",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "registeredOffice",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "templateName",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "riskProfile",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "sector",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "lastAssessmentDateRiskProfile",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "format": "date-time"
+        }
+      ]
+    },
+    {
+      "id": "create-an-administration",
+      "group": "Administrations",
+      "method": "POST",
+      "path": "/v1/advisers/{globalAdviserId}/administrations",
+      "summary": "Create an Administration",
+      "description": "",
+      "deprecated": false,
+      "params": [
+        {
+          "name": "globalAdviserId",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "required": true,
+          "description": "",
+          "fields": [
+            {
+              "name": "compilationSubscription",
+              "type": "string",
+              "required": false,
+              "description": "",
+              "enum": [
+                "CompilationNone",
+                "CompilationProfessional",
+                "CompilationPremium",
+                "CompilationUltimate"
+              ]
+            },
+            {
+              "name": "insightsSubscription",
+              "type": "string",
+              "required": false,
+              "description": "",
+              "enum": [
+                "InsightsNone",
+                "InsightsProfessional",
+                "InsightsPremium",
+                "InsightsUltimate"
+              ]
+            },
+            {
+              "name": "periodType",
+              "type": "string",
+              "required": false,
+              "description": "",
+              "enum": [
+                "month",
+                "4weeks"
+              ]
+            },
+            {
+              "name": "templateName",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "startFiscalYear",
+              "type": "string",
+              "required": false,
+              "description": "In case of periodType == \"month\":\n- The name of the month like \"january\" or \"february\", etc.\n\nIn case of periodType == \"4weeks\":\n- The period should be mentioned like \"period-01\", \"period-02\", \"period-13\"."
+            },
+            {
+              "name": "roundImportedFinancialFigures",
+              "type": "boolean",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "useDimensions",
+              "type": "boolean",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "isPrivate",
+              "type": "boolean",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "required": true,
+              "description": ""
+            }
+          ]
+        }
+      ],
+      "response": [
+        {
+          "name": "administrationId",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "clientIdentifier",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "addedDate",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "date-time"
+        },
+        {
+          "name": "address",
+          "type": "object",
+          "required": false,
+          "description": "",
+          "fields": [
+            {
+              "name": "street",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "houseNumber",
+              "type": "integer",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "houseNumberAddition",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "zipCode",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "city",
+              "type": "string",
+              "required": false,
+              "description": ""
+            }
+          ]
+        },
+        {
+          "name": "legalForm",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "cocNumber",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "legalName",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "legalIdentificationNumber",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "sbi",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "isPrivate",
+          "type": "boolean",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "dateTerminated",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "format": "date-time"
+        },
+        {
+          "name": "useDimensions",
+          "type": "boolean",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "locale",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "roundImportedFinancialFigures",
+          "type": "boolean",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "periodType",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "startFiscalYear",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "website",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "phoneNumber",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "generalDescription",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "companyActivitiesDescription",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "internalControlDescription",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "administrativeIssuesDescription",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "legalEntityClassificationId",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "registeredOffice",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "templateName",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "riskProfile",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "sector",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "lastAssessmentDateRiskProfile",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "format": "date-time"
+        }
+      ]
+    },
+    {
+      "id": "update-client-card",
+      "group": "Administrations",
+      "method": "PATCH",
+      "path": "/v1/advisers/{globalAdviserId}/administrations/{globalAdministrationId}/client-card",
+      "summary": "Update Client Card",
+      "description": "",
+      "deprecated": false,
+      "params": [
+        {
+          "name": "globalAdviserId",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "globalAdministrationId",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "required": true,
+          "description": "",
+          "fields": [
+            {
+              "name": "administrationName",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "legalName",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "clientIdentifier",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "phoneNumber",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "website",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "legalForm",
+              "type": "string",
+              "required": false,
+              "description": "",
+              "enum": [
+                "association",
+                "firm",
+                "lp",
+                "npo",
+                "pf",
+                "ltd",
+                "plc",
+                "sp"
+              ]
+            },
+            {
+              "name": "legalEntityClassification",
+              "type": "string",
+              "required": false,
+              "description": "",
+              "enum": [
+                "micro",
+                "small",
+                "medium",
+                "large"
+              ]
+            },
+            {
+              "name": "foundationOrAssociationType",
+              "type": "string",
+              "required": false,
+              "description": "",
+              "enum": [
+                "CommercialFoundationOrAssociation",
+                "SmallOrganizationWithoutProfitGoal",
+                "LargeOrganizationWithoutProfitGoal"
+              ]
+            },
+            {
+              "name": "cocNumber",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "legalIdentificationNumber",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "sbi",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "sector",
+              "type": "string",
+              "required": false,
+              "description": "",
+              "enum": [
+                "other",
+                "healthcare"
+              ]
+            },
+            {
+              "name": "registeredOffice",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "riskProfile",
+              "type": "string",
+              "required": false,
+              "description": "",
+              "enum": [
+                "NoImpact",
+                "LowImpact",
+                "NormalImpact",
+                "HighImpact",
+                "UnacceptableImpact"
+              ]
+            },
+            {
+              "name": "lastAssessmentDateRiskProfile",
+              "type": "string",
+              "required": false,
+              "description": "",
+              "format": "date-time"
+            },
+            {
+              "name": "address",
+              "type": "object",
+              "required": false,
+              "description": "",
+              "fields": [
+                {
+                  "name": "street",
+                  "type": "string",
+                  "required": false,
+                  "description": ""
+                },
+                {
+                  "name": "houseNumber",
+                  "type": "integer",
+                  "required": false,
+                  "description": ""
+                },
+                {
+                  "name": "houseNumberAddition",
+                  "type": "string",
+                  "required": false,
+                  "description": ""
+                },
+                {
+                  "name": "zipCode",
+                  "type": "string",
+                  "required": false,
+                  "description": ""
+                },
+                {
+                  "name": "city",
+                  "type": "string",
+                  "required": false,
+                  "description": ""
+                }
+              ]
+            },
+            {
+              "name": "clientDescriptions",
+              "type": "object",
+              "required": false,
+              "description": "",
+              "fields": [
+                {
+                  "name": "generalDescription",
+                  "type": "string",
+                  "required": false,
+                  "description": ""
+                },
+                {
+                  "name": "companyActivitiesDescription",
+                  "type": "string",
+                  "required": false,
+                  "description": ""
+                },
+                {
+                  "name": "internalControlDescription",
+                  "type": "string",
+                  "required": false,
+                  "description": ""
+                },
+                {
+                  "name": "administrativeIssuesDescription",
+                  "type": "string",
+                  "required": false,
+                  "description": ""
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "response": []
+    },
+    {
+      "id": "list-of-rubric-and-period-mappings",
+      "group": "Administrations",
+      "method": "GET",
+      "path": "/v1/advisers/{globalAdviserId}/administrations/{globalAdministrationId}/mapping",
+      "summary": "List of rubric and period mappings",
+      "description": "",
+      "deprecated": false,
+      "params": [
+        {
+          "name": "globalAdviserId",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "globalAdministrationId",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        }
+      ],
+      "response": [
+        {
+          "name": "globalAdministrationId",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "lastModified",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "format": "date-time"
+        },
+        {
+          "name": "linkedToTemplate",
+          "type": "boolean",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "rubricMappings",
+          "type": "array[object]",
+          "required": true,
+          "description": "",
+          "fields": [
+            {
+              "name": "sourceId",
+              "type": "string",
+              "required": true,
+              "description": ""
+            },
+            {
+              "name": "sourceRgsCode",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "sourceDescription",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "visionplannerId",
+              "type": "string",
+              "required": true,
+              "description": ""
+            },
+            {
+              "name": "visionplannerDescription",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "visionplannerRubricType",
+              "type": "string",
+              "required": false,
+              "description": "",
+              "enum": [
+                "Balance",
+                "ProfitAndLoss",
+                "CashFlow",
+                "AdditionalData",
+                "Wages",
+                "DistributionOfProfitUnincorporated",
+                "FiscalPositionIncorporated",
+                "FiscalPositionUnincorporated",
+                "MovementSchedules",
+                "DistributionOfProfitIncorporated",
+                "DistributionOfProfitNonProfit",
+                "KPI",
+                "FundsFlow"
+              ]
+            },
+            {
+              "name": "visionplannerRubricMappingType",
+              "type": "string",
+              "required": false,
+              "description": "",
+              "enum": [
+                "Manual",
+                "Template",
+                "RGS",
+                "VAIA"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "periodMappings",
+          "type": "array[object]",
+          "required": true,
+          "description": "",
+          "fields": [
+            {
+              "name": "sourceId",
+              "type": "string",
+              "required": true,
+              "description": ""
+            },
+            {
+              "name": "visionplannerId",
+              "type": "string",
+              "required": true,
+              "description": ""
+            },
+            {
+              "name": "visionplannerDescription",
+              "type": "string",
+              "required": false,
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "documents-to-be-signed",
+      "group": "DocumentSigning",
+      "method": "GET",
+      "path": "/v1/document-signing/documents",
+      "summary": "Documents to be signed",
+      "description": "This end-point returns a collection of documents. It can be one or more. Also attachments can be added. A list of signers is included as well.",
+      "deprecated": false,
+      "params": [
+        {
+          "name": "requestId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "This requestId is received as payload of the callback."
+        }
+      ],
+      "response": [
+        {
+          "name": "documents",
+          "type": "array[object]",
+          "required": true,
+          "description": "",
+          "fields": [
+            {
+              "name": "content",
+              "type": "string",
+              "required": true,
+              "description": "Base64 encoded."
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "required": true,
+              "description": ""
+            },
+            {
+              "name": "type",
+              "type": "string",
+              "required": true,
+              "description": ""
+            },
+            {
+              "name": "cocNumber",
+              "type": "string",
+              "required": true,
+              "description": ""
+            },
+            {
+              "name": "financialYear",
+              "type": "string",
+              "required": true,
+              "description": ""
+            },
+            {
+              "name": "contactpersonEmail",
+              "type": "string",
+              "required": false,
+              "description": ""
+            },
+            {
+              "name": "xbrl",
+              "type": "string",
+              "required": false,
+              "description": "Contains a base64 encoded xbrl document."
+            },
+            {
+              "name": "signers",
+              "type": "array[object]",
+              "required": true,
+              "description": "",
+              "fields": [
+                {
+                  "name": "email",
+                  "type": "string",
+                  "required": true,
+                  "description": ""
+                },
+                {
+                  "name": "mobile",
+                  "type": "string",
+                  "required": true,
+                  "description": ""
+                },
+                {
+                  "name": "signature_marker",
+                  "type": "string",
+                  "required": true,
+                  "description": ""
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "required": true,
+                  "description": ""
+                },
+                {
+                  "name": "message",
+                  "type": "string",
+                  "required": true,
+                  "description": ""
+                },
+                {
+                  "name": "signerType",
+                  "type": "string",
+                  "required": false,
+                  "description": "",
+                  "enum": [
+                    "Accountant",
+                    "Board_Member"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "attachments",
+          "type": "array[object]",
+          "required": true,
+          "description": "",
+          "fields": [
+            {
+              "name": "content",
+              "type": "string",
+              "required": true,
+              "description": ""
+            },
+            {
+              "name": "name",
+              "type": "string",
+              "required": true,
+              "description": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "signed-documents",
+      "group": "DocumentSigning",
+      "method": "POST",
+      "path": "/v1/document-signing/documents",
+      "summary": "Signed documents",
+      "description": "Usage of type attribute:\n\nType | Description\n---------|----------\nEmpty or not available | \"content\"-tag has a signed pdf\n\"pdf\" | \"content\"-tag has a signed pdf\n\"xbrl\" | \"xbrl\"-tag has an xbrl with an updated \"adoption date\"\n\"linkingSigning\" | \"content\"-tag has a .ZIP file that contains: including XBRL Statement with an updated \"adoption date\", Controleverklaring and detached signature file. The \"xbrl\"-tag contains the XBRL Statement with an updated \"adoption date\". That means that there are 2 identical XBRL-files provided.\n\"auditTrail\" | As an extra document in the \"documents\"-array, the \"content\"-tag can be filled with an audit trail of DigiPoort.",
+      "deprecated": false,
+      "params": [
+        {
+          "name": "requestId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "required": true,
+          "description": "",
+          "fields": [
+            {
+              "name": "documents",
+              "type": "array[object]",
+              "required": true,
+              "description": "",
+              "fields": [
+                {
+                  "name": "content",
+                  "type": "string",
+                  "required": false,
+                  "description": "Base64 encoded."
+                },
+                {
+                  "name": "xbrl",
+                  "type": "string",
+                  "required": false,
+                  "description": "Base64 encoded xbrl document."
+                },
+                {
+                  "name": "name",
+                  "type": "string",
+                  "required": true,
+                  "description": ""
+                },
+                {
+                  "name": "type",
+                  "type": "string",
+                  "required": true,
+                  "description": ""
+                },
+                {
+                  "name": "cocNumber",
+                  "type": "string",
+                  "required": true,
+                  "description": ""
+                },
+                {
+                  "name": "financialYear",
+                  "type": "string",
+                  "required": true,
+                  "description": ""
+                },
+                {
+                  "name": "signers",
+                  "type": "array[object]",
+                  "required": true,
+                  "description": "",
+                  "fields": [
+                    {
+                      "name": "email",
+                      "type": "string",
+                      "required": true,
+                      "description": ""
+                    },
+                    {
+                      "name": "name",
+                      "type": "string",
+                      "required": true,
+                      "description": ""
+                    },
+                    {
+                      "name": "datetime",
+                      "type": "string",
+                      "required": true,
+                      "description": "",
+                      "format": "date-time"
+                    },
+                    {
+                      "name": "message",
+                      "type": "string",
+                      "required": true,
+                      "description": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "response": []
+    },
+    {
+      "id": "signing-status",
+      "group": "DocumentSigning",
+      "method": "POST",
+      "path": "/v1/document-signing/status",
+      "summary": "Signing status",
+      "description": "",
+      "deprecated": false,
+      "params": [
+        {
+          "name": "requestId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "required": true,
+          "description": "",
+          "fields": [
+            {
+              "name": "status",
+              "type": "string",
+              "required": true,
+              "description": ""
+            },
+            {
+              "name": "content",
+              "type": "string",
+              "required": true,
+              "description": ""
+            }
+          ]
+        }
+      ],
+      "response": []
+    },
+    {
+      "id": "list-of-dossiers",
+      "group": "Dossiers",
+      "method": "GET",
+      "path": "/v1/advisers/{globalAdviserId}/administrations/{globalAdministrationId}/dossiers",
+      "summary": "List of Dossiers",
+      "description": "",
+      "deprecated": false,
+      "params": [
+        {
+          "name": "page[limit]",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "page[offset]",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "sort",
+          "in": "query",
+          "type": "array[string]",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "filter",
+          "in": "query",
+          "type": "array[string]",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "globalAdviserId",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "globalAdministrationId",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        }
+      ],
+      "response": [
+        {
+          "name": "globalAdviserId",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "globalAdministrationId",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "globalDossierId",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "year",
+          "type": "integer",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "dossierType",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "enum": [
+            "CMP",
+            "ADT",
+            "TXI",
+            "CMP_FE",
+            "TXC"
+          ]
+        },
+        {
+          "name": "lastUpdatedDate",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "date-time"
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "dueDate",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "format": "date-time"
+        },
+        {
+          "name": "administrationName",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "legalEntityClassification",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "enum": [
+            "micro",
+            "small",
+            "medium",
+            "large"
+          ]
+        },
+        {
+          "name": "accountingPolicy",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "enum": [
+            "MiddleLargeOrLarge",
+            "SmallCommercial",
+            "SmallFiscal",
+            "IBCompany",
+            "MicroFiscal",
+            "MicroEntityCommercial",
+            "FoundationOrAssociation"
+          ]
+        },
+        {
+          "name": "financialStatementType",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "enum": [
+            "Separate",
+            "Consolidated",
+            "Holding"
+          ]
+        },
+        {
+          "name": "dossierCreatedDate",
+          "type": "string",
+          "required": false,
+          "description": "",
+          "format": "date-time"
+        },
+        {
+          "name": "dossierCreatedBy",
+          "type": "string",
+          "required": false,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "me",
+      "group": "Home",
+      "method": "GET",
+      "path": "/v1/me",
+      "summary": "Me",
+      "description": "",
+      "deprecated": false,
+      "params": [],
+      "response": [
+        {
+          "name": "email",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "globalAdviserId",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "applicationClientId",
+          "type": "string",
+          "required": true,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "list-of-administrations-with-modified-mappings",
+      "group": "ModifiedAdministrations",
+      "method": "GET",
+      "path": "/v1/advisers/{globalAdviserId}/administrations-with-modified-mappings",
+      "summary": "List of administrations with modified mappings",
+      "description": "Returns a list containing globalAdministrationIds of administrations that have modified mappings.",
+      "deprecated": false,
+      "params": [
+        {
+          "name": "modifiedAfter",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "date-time"
+        },
+        {
+          "name": "globalAdviserId",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        }
+      ],
+      "response": [
+        {
+          "name": "(value)",
+          "type": "string",
+          "required": true,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "list-of-webhooks",
+      "group": "Webhooks",
+      "method": "GET",
+      "path": "/v1/advisers/{globalAdviserId}/webhooks",
+      "summary": "List of webhooks",
+      "description": "",
+      "deprecated": false,
+      "params": [
+        {
+          "name": "globalAdviserId",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        }
+      ],
+      "response": [
+        {
+          "name": "webhookId",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "globalAdviserId",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "globalClientId",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "webhookTypeId",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "webhookName",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "callbackUrl",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "uri"
+        },
+        {
+          "name": "createdAt",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "date-time"
+        },
+        {
+          "name": "lastModified",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "date-time"
+        }
+      ]
+    },
+    {
+      "id": "register-a-webhook",
+      "group": "Webhooks",
+      "method": "POST",
+      "path": "/v1/advisers/{globalAdviserId}/webhooks",
+      "summary": "Register a webhook",
+      "description": "",
+      "deprecated": false,
+      "params": [
+        {
+          "name": "globalAdviserId",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "required": true,
+          "description": "",
+          "fields": [
+            {
+              "name": "globalClientId",
+              "type": "string",
+              "required": false,
+              "description": "",
+              "format": "guid"
+            },
+            {
+              "name": "webhookTypeId",
+              "type": "string",
+              "required": true,
+              "description": "",
+              "format": "guid"
+            },
+            {
+              "name": "webhookName",
+              "type": "string",
+              "required": true,
+              "description": ""
+            },
+            {
+              "name": "callbackUrl",
+              "type": "string",
+              "required": true,
+              "description": ""
+            },
+            {
+              "name": "callbackSecret",
+              "type": "string",
+              "required": true,
+              "description": ""
+            }
+          ]
+        }
+      ],
+      "response": [
+        {
+          "name": "(value)",
+          "type": "string",
+          "required": true,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "details-of-a-webhook",
+      "group": "Webhooks",
+      "method": "GET",
+      "path": "/v1/advisers/{globalAdviserId}/webhooks/{webhookId}",
+      "summary": "Details of a webhook",
+      "description": "",
+      "deprecated": false,
+      "params": [
+        {
+          "name": "globalAdviserId",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "webhookId",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        }
+      ],
+      "response": [
+        {
+          "name": "webhookId",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "globalAdviserId",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "globalClientId",
+          "type": "string",
+          "required": false,
+          "description": ""
+        },
+        {
+          "name": "webhookTypeId",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "webhookName",
+          "type": "string",
+          "required": true,
+          "description": ""
+        },
+        {
+          "name": "callbackUrl",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "uri"
+        },
+        {
+          "name": "createdAt",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "date-time"
+        },
+        {
+          "name": "lastModified",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "date-time"
+        }
+      ]
+    },
+    {
+      "id": "delete-a-webhook-registration",
+      "group": "Webhooks",
+      "method": "DELETE",
+      "path": "/v1/advisers/{globalAdviserId}/webhooks/{webhookId}",
+      "summary": "Delete a webhook registration",
+      "description": "",
+      "deprecated": false,
+      "params": [
+        {
+          "name": "globalAdviserId",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "webhookId",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        }
+      ],
+      "response": [
+        {
+          "name": "(value)",
+          "type": "string",
+          "required": true,
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "update-webhook-details",
+      "group": "Webhooks",
+      "method": "PUT",
+      "path": "/v1/advisers/{globalAdviserId}/webhooks/{webhookId}",
+      "summary": "Update webhook details",
+      "description": "",
+      "deprecated": false,
+      "params": [
+        {
+          "name": "globalAdviserId",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "webhookId",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "",
+          "format": "guid"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "required": true,
+          "description": "",
+          "fields": [
+            {
+              "name": "webhookName",
+              "type": "string",
+              "required": true,
+              "description": ""
+            },
+            {
+              "name": "callbackUrl",
+              "type": "string",
+              "required": true,
+              "description": ""
+            },
+            {
+              "name": "callbackSecret",
+              "type": "string",
+              "required": true,
+              "description": ""
+            }
+          ]
+        }
+      ],
+      "response": [
+        {
+          "name": "(value)",
+          "type": "string",
+          "required": true,
+          "description": ""
+        }
+      ]
+    }
+  ]
+}

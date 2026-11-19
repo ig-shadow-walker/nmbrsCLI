@@ -1,0 +1,52 @@
+name: Release
+
+# Builds the nmbrs binaries, install.sh and SHA256SUMS and attaches them to a GitHub release.
+# Runs only when started by hand for an existing release tag: Actions tab > Release > Run workflow.
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing release tag to build and upload assets for (e.g. v0.1.0)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.tag }}
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Typecheck
+        run: bun run typecheck
+
+      - name: Test
+        run: bun test
+
+      - name: Check tag matches package.json version
+        run: |
+          expected="v$(jq -r .version package.json)"
+          if [ "$expected" != "$TAG" ]; then
+            echo "::error::Tag $TAG does not match package.json version $expected"
+            exit 1
+          fi
+
+      - name: Build release files
+        run: bun run build:release
+
+      - name: Upload assets to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$TAG" dist/release/* --clobber --repo "$GITHUB_REPOSITORY"
