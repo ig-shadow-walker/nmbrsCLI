@@ -8,7 +8,8 @@
 #   --dir <path>        where the binary goes                    (NMBRS_INSTALL_DIR, default: ~/.local/bin)
 #   --no-setup          don't start `nmbrs setup` afterwards     (NMBRS_NO_SETUP=1)
 #   --no-modify-path    don't add the folder to your shell's PATH (NMBRS_NO_MODIFY_PATH=1)
-# NMBRS_DOWNLOAD_URL replaces the GitHub release URL, for hosting the files elsewhere.
+# NMBRS_DOWNLOAD_URL replaces the GitHub release URL, for hosting the files elsewhere. It can also be a
+# local folder holding the release files (e.g. from `gh release download`), for a private repository.
 #
 # Running it again updates nmbrs to the latest release and keeps your credentials.
 
@@ -118,6 +119,10 @@ detect_platform() {
 }
 
 download() {
+  case "$1" in
+    http://*|https://*|file://*) ;;
+    *) cp "$1" "$2"; return ;;  # a local folder of release files
+  esac
   if command -v curl >/dev/null 2>&1; then
     curl -fsSL --retry 3 -o "$2" "$1"
   elif command -v wget >/dev/null 2>&1; then

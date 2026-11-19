@@ -134,7 +134,8 @@ stops working.
 
 | Problem | Fix |
 |---|---|
-| The login page shows an error about the redirect/callback, or setup waits until it times out | Add `http://localhost:47615/callback` as a Callback URL of the API connection in Connect Center, then `nmbrs login` |
+| The login page says **"Sorry, there was an error: invalid_request"**, or setup waits until it times out | The Callback URL is missing or differs. Set exactly `http://localhost:47615/callback` (http, no trailing slash) on the API connection in Connect Center, save, then `nmbrs login` |
+| The login page says **"Sorry, there was an error: unauthorized_client"** | The Client ID isn't known in this environment. Copy it again; for a sandbox connection use `nmbrs setup --sandbox` |
 | "did not accept that Client ID and Secret" | Copy both again from the Eigenschappen tab. Sandbox connection? `nmbrs setup --sandbox` |
 | "Can't listen on localhost:47615" | Something else uses that port. Close it, or `nmbrs login --manual` |
 | Exit 3 "login expired" / `invalid_grant` | The 180 days passed, or the same session was used on another machine. `nmbrs login` |

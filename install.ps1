@@ -7,7 +7,7 @@
 #   NMBRS_INSTALL_DIR     -InstallDir <path>  where nmbrs.exe goes (default: %LOCALAPPDATA%\Programs\nmbrs)
 #   NMBRS_NO_SETUP=1      -NoSetup            don't start `nmbrs setup` afterwards
 #   NMBRS_NO_MODIFY_PATH=1 -NoModifyPath      don't add the folder to your user PATH
-#   NMBRS_DOWNLOAD_URL                        download from this folder instead of the GitHub release
+#   NMBRS_DOWNLOAD_URL                        download from this URL or local folder instead of the GitHub release
 #
 # Running it again updates nmbrs to the latest release and keeps your credentials.
 # Works in Windows PowerShell 5.1 and PowerShell 7. Keep this file ASCII-only: 5.1 may read it as ANSI.
@@ -108,6 +108,7 @@ function Get-NmbrsArch {
 
 function Get-NmbrsFile([string]$Url, [string]$OutFile) {
   try {
+    if ($Url -notmatch '^[a-z]+://') { Copy-Item -LiteralPath $Url -Destination $OutFile; return }  # a local folder of release files
     Invoke-WebRequest -Uri $Url -OutFile $OutFile -UseBasicParsing
   } catch {
     throw "could not download ${Url}: $($_.Exception.Message)"
